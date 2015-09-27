@@ -5,19 +5,17 @@ one:
   body: MyText
   link: MyString
   image_url: MyString
-  date: 2015-09-26 21:06:56
+  date: 2015-09-26 21:18:34
   sent: false
   scheduled: false
   group_id: 
-  recipient_id: 
 
 two:
   header: MyString
   body: MyText
   link: MyString
   image_url: MyString
-  date: 2015-09-26 21:06:56
+  date: 2015-09-26 21:18:34
   sent: false
   scheduled: false
   group_id: 
-  recipient_id: 

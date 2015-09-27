@@ -9,7 +9,6 @@ class CreateMessages < ActiveRecord::Migration
       t.boolean :sent
       t.boolean :scheduled
       t.references :group, index: true, foreign_key: true
-      t.references :recipient, index: true, foreign_key: true
 
       t.timestamps null: false
     end
