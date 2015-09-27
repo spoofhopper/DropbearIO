@@ -8,7 +8,7 @@
           <th> Group </th>
           <th> Sent? </th>
           <th> Scheduled? </th>
-          <th> Date </th>
+          <th> Date sent / To be sent </th>
           <th> Actions </th>
         </tr>
 
@@ -19,11 +19,13 @@
           <td><%= @message.scheduled %></td>
           <td><%= @message.date %></td>
           <td>
-            <%=link_to 'Edit Mesage', edit_message_path(@message), class: 'btn btn-warning btn-xs' %>
+            <%=link_to 'Edit Message', edit_message_path(@message), class: 'btn btn-warning btn-xs' %>
             <%=link_to 'Delete Message', @message, method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-xs btn-danger' %>
           </td>
-
         </tr>
 
   </div>
+
+<%=link_to "All Messages", messages_path, class: 'btn btn-default btn-lg'%>
+<p>
 </div>

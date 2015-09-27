@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :users do
-    resources :groups do
+#  resources :users do
+#    resources :groups do
       resources :messages
-    end
-  end
+#    end
+#  end
 
 
-  get 'messages', to: 'messages/index'
+#  get 'messages', to: 'messages#index'
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
   get 'about', to: 'static_pages#about'
 

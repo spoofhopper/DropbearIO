@@ -19,8 +19,9 @@
     <% end %>
 
     <%= f.input :body, label: false, input_html: {placeholder: "Message Text"}%>
-    <%= f.input :date, input_html: { data: {behavior: "datepicker"}},
-                       as: :string %>
+    <br>
+    <%= f.input :date, label: "When to Send:" %>
+    <br>
     <%= f.submit "Submit".html_safe, class: 'btn btn-lg btn-danger'%>
 
   <% end %>
