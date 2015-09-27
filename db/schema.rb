@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927042224) do
+ActiveRecord::Schema.define(version: 20150927041834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,29 +36,11 @@ ActiveRecord::Schema.define(version: 20150927042224) do
     t.boolean  "sent"
     t.boolean  "scheduled"
     t.integer  "group_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "recipient_id"
-  end
-
-  add_index "messages", ["group_id"], name: "index_messages_on_group_id", using: :btree
-  add_index "messages", ["recipient_id"], name: "index_messages_on_recipient_id", using: :btree
-
-  create_table "recipients", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "address"
-    t.string   "website"
-    t.string   "image_url"
-    t.integer  "group_id"
-    t.integer  "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "recipients", ["group_id"], name: "index_recipients_on_group_id", using: :btree
-  add_index "recipients", ["message_id"], name: "index_recipients_on_message_id", using: :btree
+  add_index "messages", ["group_id"], name: "index_messages_on_group_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -73,7 +55,4 @@ ActiveRecord::Schema.define(version: 20150927042224) do
 
   add_foreign_key "groups", "users"
   add_foreign_key "messages", "groups"
-  add_foreign_key "messages", "recipients"
-  add_foreign_key "recipients", "groups"
-  add_foreign_key "recipients", "messages"
 end
