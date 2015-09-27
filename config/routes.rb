@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'messages/new'
 
-  get 'messages/index'
+  resources :users do
+    resources :groups do
+      resources :messages
+    end
+  end
 
-  get 'messages/show'
 
-  get 'static_pages/home'
-
+  get 'messages', to: 'messages/index'
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
+  get 'about', to: 'static_pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
