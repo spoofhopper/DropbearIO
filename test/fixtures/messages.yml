@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  header: MyString
+  body: MyText
+  link: MyString
+  image_url: MyString
+  date: 2015-09-26 21:06:56
+  sent: false
+  scheduled: false
+  group_id: 
+  recipient_id: 
+
+two:
+  header: MyString
+  body: MyText
+  link: MyString
+  image_url: MyString
+  date: 2015-09-26 21:06:56
+  sent: false
+  scheduled: false
+  group_id: 
+  recipient_id: 
