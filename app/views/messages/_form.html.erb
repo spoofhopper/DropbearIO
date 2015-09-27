@@ -19,9 +19,8 @@
     <% end %>
 
     <%= f.input :body, label: false, input_html: {placeholder: "Message Text"}%>
-    <%= f.input :date, as: :datetime, start_year: Date.today.year,
-                                  end_year: Date.today.year + 1,
-                                  order: [:minute, :hour, :day, :month, :year] %>
+    <%= f.input :date, input_html: { data: {behavior: "datepicker"}},
+                       as: :string %>
     <%= f.submit "Submit".html_safe, class: 'btn btn-lg btn-danger'%>
 
   <% end %>
