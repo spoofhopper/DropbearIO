@@ -18,4 +18,6 @@
 class Message < ActiveRecord::Base
   belongs_to :group
   has_many :users, through: :groups
+  validates :body, presence: true,
+                    length: { minimum: 5, maximum: 160 }
 end
