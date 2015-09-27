@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'messages/new'
+
+  get 'messages/index'
+
+  get 'messages/show'
+
   get 'static_pages/home'
 
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
