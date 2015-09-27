@@ -13,6 +13,7 @@
 #  group_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  MediaURL   :string
 #
 
 require 'test_helper'
