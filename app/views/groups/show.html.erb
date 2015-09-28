@@ -1,0 +1,27 @@
+<div class="col-12">
+  <div class="table-responsive">
+    <h1 style="color:#cc3333;">Group Details</h1>
+      <table class="table table-hover">
+
+        <tr>
+          <th> Group Name </th>
+          <th> Description </th>
+          <th> Image </th>
+          <th> Actions </th>
+        </tr>
+
+        <tr>
+          <td><%= @group.name %></td>
+          <td><%= @group.description %></td>
+          <td><%= image_tag(@group.image_url, class: 'img-thumbnail img-responsive') %></td>
+          <td>
+            <%=link_to 'Edit Group', edit_group_path(@group), class: 'btn btn-warning btn-xs' %>
+            <%=link_to 'Delete Group', @group, method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-xs btn-danger' %>
+          </td>
+        </tr>
+
+  </div>
+
+<%=link_to "All Groups", groups_path, class: 'btn btn-default btn-lg'%>
+<p>
+</div>

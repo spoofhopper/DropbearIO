@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'groups/new'
+
+  get 'groups/index'
+
+  get 'groups/show'
+
 #  resources :users do
 #    resources :groups do
+      resources :groups
       resources :messages
 #    end
 #  end
