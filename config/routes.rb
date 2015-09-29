@@ -13,10 +13,13 @@ Rails.application.routes.draw do
 #  end
 
 post 'twilio/voice' => 'twilio#voice'
+get 'twilio/sms_reply' => 'twilio#sms_reply'
+
 
 #  get 'messages', to: 'messages#index'
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
   get 'about', to: 'static_pages#about'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

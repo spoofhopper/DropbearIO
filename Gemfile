@@ -19,6 +19,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twilio-ruby'
+gem 'sinatra'
+gem 'tilt', '~> 1.4.1'
 
 group :development, :test do
   gem 'byebug'
