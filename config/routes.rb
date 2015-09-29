@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   get 'groups/show'
 
 #  resources :users do
-#    resources :groups do
-      resources :groups
+    resources :groups do
       resources :messages
-#    end
+    end
 #  end
 
 

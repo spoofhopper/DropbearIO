@@ -2,28 +2,16 @@
 </div>
 
 <div class="panel-body">
-  <%= simple_form_for @message do |f| %>
+  <%= simple_form_for [@group, @message] do |f| %>
 
-    <% if @message.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@message.errors.count, "error") %> prohibited
-          this message from being saved:
-        </h2>
-        <ul>
-          <% @message.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+
 
     <%= f.input :body, label: false, input_html: {placeholder: "Message Text"}%>
     <br>
     <%= f.input :date, label: "When to Send:" %>
     <br>
     <%= f.submit "Submit".html_safe, class: 'btn btn-lg btn-danger'%>
-
+    <%= link_to 'Cancel', :back, class: 'btn btn-lg btn-default' %>
   <% end %>
 
 </div>
