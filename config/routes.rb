@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
 #  end
 
+post 'twilio/voice' => 'twilio#voice'
 
 #  get 'messages', to: 'messages#index'
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
