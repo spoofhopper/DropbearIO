@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
 
   def index
     set_group
-    @messages = Message.all
+    @messages = Group.find(@group).messages
   end
 
   def show
