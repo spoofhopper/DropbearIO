@@ -17,15 +17,14 @@ Rails.application.routes.draw do
 #  end
 
 post 'twilio/voice' => 'twilio#voice'
-get 'messages/send_text_message' => 'messages#send_text_message'
 get 'twilio/sms_reply' => 'twilio#sms_reply'
-#post 'twilio/send_text_message' => 'twilio#send_text_message'
 
 
-#  get 'messages', to: 'messages#index'
+
+
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
   get 'about', to: 'static_pages#about'
-  get 'twilio', to: 'twilio#home'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.group = @group
     if @message.save
-      redirect_to group_message_path(@group, @message)
+      redirect_to group_messages_path(@group, @message)
     else
       render 'new'
     end
@@ -42,7 +42,7 @@ class MessagesController < ApplicationController
     set_group
     @message = get_message
     if @message.update(message_params)
-      redirect_to group_message_path(@group, @message)
+      redirect_to group_messages_path(@group, @message)
     else
       render 'edit'
     end
@@ -57,7 +57,6 @@ class MessagesController < ApplicationController
 
 
   def send_text_message
-
     #modify this later to work with the Figaro gem for security: http://richardgmartin.me/web-development/integrate-twilio-texting-ruby-rails-application/
     sid = "AC74db4ed4a2b6e400880205014d384761"
     token = "e6ded52b2286ca47517ae3641be3f54d"
@@ -81,9 +80,10 @@ class MessagesController < ApplicationController
       puts "Sent message to #{value}"
 
     end
-    render_twiml response
+    #render 'message_sent'
   end
   helper_method :send_text_message
+
 
 
 

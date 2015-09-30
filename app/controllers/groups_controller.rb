@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
     def update
       @group = get_group
       if @group.update(group_params)
-        redirect_to @group
+        redirect_to group_messages_path(@group)
       else
         render 'edit'
       end
