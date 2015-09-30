@@ -12,11 +12,12 @@ Rails.application.routes.draw do
 
 #  resources :users do
     resources :groups do
-      resources :messages 
+      resources :messages
     end
 #  end
 
 post 'twilio/voice' => 'twilio#voice'
+get 'messages/send_text_message' => 'messages#send_text_message'
 get 'twilio/sms_reply' => 'twilio#sms_reply'
 #post 'twilio/send_text_message' => 'twilio#send_text_message'
 
