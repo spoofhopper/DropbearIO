@@ -5,3 +5,15 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,700,700italic,600italic);
+
+.open_sans_font {
+  font-family: 'Open Sans', serif;
+}
+
+.josefin_sans_font {
+  font-family: 'Josefin Sans', sans-serif;
+}
