@@ -19,6 +19,7 @@
           <td><%= @message.scheduled %></td>
           <td><%= @message.date %></td>
           <td>
+            <%=link_to 'Send Message', send_text_message, class: 'btn btn-danger btn-xs' %>
             <%=link_to 'Edit Message', edit_group_message_path(@group, @message), class: 'btn btn-warning btn-xs' %>
             <%=link_to 'Delete Message', group_message_path(@group, @message), method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-xs btn-danger' %>
           </td>

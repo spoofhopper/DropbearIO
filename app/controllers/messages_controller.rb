@@ -50,6 +50,30 @@ class MessagesController < ApplicationController
   end
 
 
+  def send_text_message
+
+    #modify this later to work with the Figaro gem for security: http://richardgmartin.me/web-development/integrate-twilio-texting-ruby-rails-application/
+    sid = "AC74db4ed4a2b6e400880205014d384761"
+    token = "e6ded52b2286ca47517ae3641be3f54d"
+    from = "+14153608229" #my twilio number
+
+    client = Twilio::REST::Client.new sid, token
+    #client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
+    recipients = {
+      "+14157938267" => "Morgan's Verizon"
+    }
+
+    recipients.each do |key, value|
+      client.account.messages.create(
+      from: from,
+      to: key,
+      body: "Hey #{value}, Party tonight!"
+      )
+      puts "Sent message to #{value}"
+    end
+  end
+  helper_method :send_text_message
+
 
 
   private

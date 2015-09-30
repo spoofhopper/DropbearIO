@@ -1,16 +1,15 @@
 require 'twilio-ruby'
-#require 'sinatra'
-
 
 class TwilioController < ApplicationController
+
+  def home
+  end
+
   include Webhookable
 
-  after_filter :set_header
+  #after_filter :set_header #Set up the response header in the set_header method which gets called in after_filter method.
 
   skip_before_action :verify_authenticity_token
-
-
-
 
   def voice
      response = Twilio::TwiML::Response.new do |r|
@@ -23,26 +22,6 @@ class TwilioController < ApplicationController
 
 
 
-  def send_text_message
-    twilio_sid = "AC74db4ed4a2b6e400880205014d384761"
-    twilio_token = "e6ded52b2286ca47517ae3641be3f54d"
-    client = Twilio::REST::Client.new twilio_sid, twilio_token
-    from = "+14153608229" #my twilio number
-
-    recipients = {
-      "+14157938267" => "Morgan's Verizon"
-    }
-
-    recipients.each do |key, value|
-      client.account.messages.create(
-      :from => from,
-      :to => key,
-      :body => "Hey #{value}, Party tonight!"
-      )
-      puts "Sent message to #{value}"
-    end
-
-  end
 
 
   def sms_reply
@@ -51,5 +30,6 @@ class TwilioController < ApplicationController
     end
     render_twiml response
   end
+
 
 end
