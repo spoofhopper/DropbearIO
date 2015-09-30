@@ -1,10 +1,19 @@
 <div class="col-12">
   <div class="table-responsive">
-    <h1 style="color:#cc3333;"><%= @group.name %>: All Messages</h1>
+
+    <div class="brand"><%= @group.name %>: All Messages</div>
+
+      <div class="address-bar">
+        <p>
+        <p>
+          <%= link_to "Create New Message", new_group_message_path(@group, @message), class: 'btn btn-success' %>
+
+      </div>
+
       <table class="table table-hover">
 
         <tr>
-          <th> Message </th>
+          <th> Message Text </th>
           <th> Group </th>
           <th> Sent? </th>
           <th> Scheduled? </th>
@@ -28,10 +37,4 @@
 
     <% end %>
   </div>
-</div>
-
-
-<div class="well">
-  <%= link_to "Create New Message", new_group_message_path(@group, @message), class: 'btn btn-success' %>
-  <%=link_to "All Groups", groups_path, class: 'btn btn-default btn-md'%>
 </div>

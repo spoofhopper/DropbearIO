@@ -33,14 +33,18 @@
 <% end %>
 
 
-<h1>Sent!</h1>
+    <div class="brand">Message sent to <br>
+    <%= @group.name %></div>
 
 <% send_text_message %>
 
-<p>
+<p style="color:white">
   <b>Body:</b> <%= @message.body %>
 </p>
 
-<p>
+<div class="address-bar">
+  <p>
+  <p>
   <%=link_to "All Group Messages", group_messages_path(@group), class: 'btn btn-default btn-lg'%>
-</p>
+
+</div>

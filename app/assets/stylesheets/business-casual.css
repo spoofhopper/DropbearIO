@@ -36,6 +36,22 @@ hr {
     border-color: #999999;
 }
 
+.panel-body {
+  background: #fff;
+  color: black;
+}
+
+
+th, td {
+
+    color: white;
+}
+
+.dropdown{
+  background: black;
+}
+
+
 .brand,
 .address-bar {
     display: none;
