@@ -24,6 +24,9 @@ get 'twilio/sms_reply' => 'twilio#sms_reply'
 
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
   get 'about', to: 'static_pages#about'
+  get 'contact', to: 'static_pages#contact'
+  get 'groups', to: 'groups#index'
+
 
 
 
