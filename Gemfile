@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
-#gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.4.0'
 #gem 'whenever', require: false

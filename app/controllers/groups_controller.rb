@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
     def show
       @group = get_group
       @messages = get_group.messages
+      @contacts = get_group.contacts
     end
 
     def new
@@ -16,7 +17,7 @@ class GroupsController < ApplicationController
     def create
       @group = Group.new(group_params)
       if @group.save
-        redirect_to group_messages_path(@group)
+        redirect_to groups_path
       else
         render 'new'
       end
@@ -29,7 +30,7 @@ class GroupsController < ApplicationController
     def update
       @group = get_group
       if @group.update(group_params)
-        redirect_to group_messages_path(@group)
+        redirect_to groups_path(@group)
       else
         render 'edit'
       end

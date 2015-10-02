@@ -3,15 +3,14 @@
 
 
 <div class="panel-body">
-  <%= simple_form_for [@group, @message] do |f| %>
+  <%= simple_form_for [@group, @contact] do |f| %>
 
 
 
-    <%= f.input :body, label: false, input_html: {placeholder: "Message Text"}%>
+    <%= f.input :name, label: false, input_html: {placeholder: "Contact Name"}%>
     <br>
-    <%= f.input :date, label: "When to Send:" %>
+    <%= f.input :phone_number, label: false, input_html: {placeholder: "Phone number (123-456-7890)"} %>
     <br>
-
     <%= f.submit "Submit".html_safe, class: 'btn btn-lg btn-warning'%>
     <%= link_to 'Cancel', :back, class: 'btn btn-lg btn-default' %>
   <% end %>

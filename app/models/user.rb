@@ -26,11 +26,9 @@ class User < ActiveRecord::Base
   has_many :groups
   has_many :messages, through: :groups
 
-  has_many :owners, class_name: "Owner",
-                    foreign_key: "owner_id"
+  has_many :contacts, through: :groups
 
-  has_many :recipients, class_name: "Recipient",
-                        foreign_key: "recipient_id"
+
 
 
 

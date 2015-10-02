@@ -1,28 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'contacts/new'
 
-  get 'contacts/index'
-
-  get 'contacts/show'
-
-  get 'sche/index'
-
-  get 'sche_controller/index'
-
-  get 'twilio/home'
-
-  get 'twilio/home'
-
-  get 'groups/new'
-
-  get 'groups/index'
-
-  get 'groups/show'
 
 #  resources :users do
     resources :groups do
       resources :messages
+      resources :contacts
     end
 #  end
 
@@ -34,7 +17,7 @@ get 'twilio/sms_reply' => 'twilio#sms_reply'
 
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
   get 'about', to: 'static_pages#about'
-  get 'contact', to: 'static_pages#contact'
+  get 'contact_us', to: 'static_pages#contact_us'
   get 'groups', to: 'groups#index'
 
 

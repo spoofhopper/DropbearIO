@@ -1,2 +1,35 @@
-<h1>Contacts#index</h1>
-<p>Find me in app/views/contacts/index.html.erb</p>
+<div class="col-12">
+  <div class="table-responsive">
+
+    <div class="brand"><%= @group.name %>: All Contacts</div>
+
+      <div class="address-bar">
+        <p>
+        <p>
+          <%= link_to "Create New Contact", new_group_contact_path(@group, @contact), class: 'btn btn-success' %>
+
+      </div>
+
+      <table class="table table-hover">
+
+        <tr>
+          <th> Name </th>
+          <th> Group </th>
+          <th> Phone Number </th>
+          <th> Actions </th>
+        </tr>
+
+    <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.name %></td>
+      <td><%= contact.group.name %></td>
+      <td><%= contact.phone_number %></td>
+      <td>
+        <%=link_to 'Edit Contact', edit_group_contact_path(@group, contact), class: 'btn btn-warning btn-xs' %>
+        <%=link_to 'Delete Contact', group_contact_path(@group, contact), method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-xs btn-danger' %>
+      </td>
+    </tr>
+
+    <% end %>
+  </div>
+</div>

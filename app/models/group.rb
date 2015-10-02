@@ -11,6 +11,8 @@
 #  updated_at  :datetime         not null
 #
 
+require 'rufus-scheduler'
+
 class Group < ActiveRecord::Base
   belongs_to :user
   has_many :messages, dependent: :destroy
@@ -23,7 +25,7 @@ end
 
 
 def prepare_group_message_for_sending
-  group = {morgan: 14157938267, kisha: 14152343164}
+  group = {morgan: 14157938267}
   group.each do |k,v|
     message = "This is a test"
     compose_message(v, message)
@@ -42,7 +44,7 @@ end
 
 def send_scheduled_messages
   scheduler = Rufus::Scheduler.new
-  test = 0
+  test = 3
   while test <= 2
     scheduler.every '5s' do
       send_message_to_group
