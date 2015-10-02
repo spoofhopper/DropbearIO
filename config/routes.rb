@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'contacts/new'
+
+  get 'contacts/index'
+
+  get 'contacts/show'
+
+  get 'sche/index'
+
+  get 'sche_controller/index'
+
   get 'twilio/home'
 
   get 'twilio/home'
