@@ -49,7 +49,7 @@ class Message < ActiveRecord::Base
   end
 
   def schedule_message
-    scheduler = Rufus::Scheduler.new
+    scheduler = Rufus::Scheduler.singleton
     scheduler.at date do
       group.contacts.each do | contact |
         Message.send_message_with_twilio(contact.phone_number, contact.name, body)
