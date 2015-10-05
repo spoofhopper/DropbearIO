@@ -13,8 +13,6 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.4.0'
-#gem 'whenever', require: false
-gem 'rufus-scheduler'
 
 
 #Other
@@ -24,6 +22,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twilio-ruby'
 gem 'sinatra'
 gem 'tilt', '~> 1.4.1'
+#gem 'whenever', require: false
+gem 'rufus-scheduler'
+gem 'delayed_job_active_record'
+gem 'daemons'
+gem 'delayed_job_web'
+
 
 group :development, :test do
   gem 'byebug'

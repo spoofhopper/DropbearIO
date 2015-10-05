@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 post 'twilio/voice' => 'twilio#voice'
 get 'twilio/sms_reply' => 'twilio#sms_reply'
 
-
+match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
 
   get 'test', to: 'static_pages#test' #makes staticpages/test something you don't have to do again
