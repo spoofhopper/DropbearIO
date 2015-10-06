@@ -36,9 +36,10 @@ class Message < ActiveRecord::Base
    token = "e6ded52b2286ca47517ae3641be3f54d"
 
     client = Twilio::REST::Client.new(sid, token)
-
+    #client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
     client.account.messages.create(
     from: "+14153608229",
+    #from: TWILIO_CONFIG['from'],
     to: phone_number,
     body: body
     #media_url: "image url"
@@ -48,15 +49,6 @@ class Message < ActiveRecord::Base
 
   end
 
-  # def schedule_message
-  #   scheduler = Rufus::Scheduler.singleton
-  #   scheduler.at date do
-  #     group.contacts.each do | contact |
-  #       Message.send_message_with_twilio(contact.phone_number, contact.name, body)
-  #     end
-  #   end
-  #   scheduler.join
-  # end
 
 def schedule_message
       group.contacts.each do | contact |

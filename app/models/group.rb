@@ -11,8 +11,6 @@
 #  updated_at  :datetime         not null
 #
 
-require 'rufus-scheduler'
-require 'twilio-ruby'
 
 class Group < ActiveRecord::Base
   belongs_to :user
@@ -20,8 +18,5 @@ class Group < ActiveRecord::Base
   has_many :contacts
   validates :name, presence: true,
                     length: { minimum: 5, maximum: 50 }
-
-
-
 
 end

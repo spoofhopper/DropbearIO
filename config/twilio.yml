@@ -1,4 +1,4 @@
 development:
+      from = '+14153608229' #my twilio number
       sid = 'AC74db4ed4a2b6e400880205014d384761'
       token = 'e6ded52b2286ca47517ae3641be3f54d'
-      from = '+14153608229' #my twilio number

@@ -22,8 +22,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twilio-ruby'
 gem 'sinatra'
 gem 'tilt', '~> 1.4.1'
-#gem 'whenever', require: false
-gem 'rufus-scheduler'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'delayed_job_web'
