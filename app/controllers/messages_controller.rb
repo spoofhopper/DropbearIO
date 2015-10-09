@@ -56,35 +56,6 @@ class MessagesController < ApplicationController
   end
 
 
-  def send_text_message
-    #modify this later to work with the Figaro gem for security: http://richardgmartin.me/web-development/integrate-twilio-texting-ruby-rails-application/
-    sid = "AC74db4ed4a2b6e400880205014d384761"
-    token = "e6ded52b2286ca47517ae3641be3f54d"
-    from = "+14153608229" #my twilio number
-
-#   client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-
-    client = Twilio::REST::Client.new sid, token
-    #client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
-    recipients = {
-      "+14157938267" => "Morgz"
-    }
-
-    recipients.each do |key, value|
-      client.account.messages.create(
-      from: from,
-      to: key,
-      body: "yo #{value}, Twilio party tonight!",
-      #media_url: "http://www.quickmeme.com/img/c9/c97933e11761606628ff85bc073c3e188267a77b100642f0162973bfd0a24994.jpg"
-      )
-      puts "Sent message to #{value}"
-
-    end
-    #render 'message_sent'
-  end
-  helper_method :send_text_message
-
-
 
 
   private
