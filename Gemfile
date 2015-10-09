@@ -24,7 +24,7 @@ gem 'tilt', '~> 1.4.1'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'delayed_job_web'
-
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
