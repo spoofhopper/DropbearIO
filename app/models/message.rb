@@ -17,7 +17,7 @@
 #  MediaURL     :string
 #
 
-require 'pp'
+
 
 class Message < ActiveRecord::Base
   belongs_to :group
@@ -28,9 +28,10 @@ class Message < ActiveRecord::Base
   validates :date, presence: true
   after_create :schedule_message
 
+  include Webhookable
 
 
- def self.send_message_with_twilio ( phone_number, name, body )
+  def self.send_message_with_twilio ( phone_number, name, body )
 
     client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
     # client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
@@ -39,9 +40,12 @@ class Message < ActiveRecord::Base
       to: phone_number,
       body: body
       #media_url: "image url"
+
+      #status_callback: request.base_url + '/message/status'
     )
 
     puts "Sent Message to #{name}!"
+    render plain: message.status
 
   end
 
@@ -50,5 +54,11 @@ class Message < ActiveRecord::Base
         Message.delay(run_at: date).send_message_with_twilio(contact.phone_number, contact.name, body)
       end
   end
+
+  # def status
+  #  # the status can be found in params['MessageStatus']
+  #  # send back an empty response
+  #  render_twiml Twilio::TwiML::Response.new
+  # end
 
 end
