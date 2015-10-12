@@ -34,7 +34,6 @@ class Message < ActiveRecord::Base
   def self.send_message_with_twilio ( phone_number, name, body )
 
     client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-    # client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
     client.account.messages.create(
       from: Rails.application.secrets.twilio_phone_number,
       to: phone_number,
@@ -44,8 +43,8 @@ class Message < ActiveRecord::Base
       #status_callback: request.base_url + '/message/status'
     )
 
-    puts "Sent Message to #{name}!"
-    render plain: message.status
+    puts "Sent Message to #{name} from #{Rails.application.secrets.twilio_phone_number}!"
+    puts "Message: #{body}"
 
   end
 

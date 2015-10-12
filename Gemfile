@@ -34,6 +34,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'annotate'
   gem 'spring'
+  gem 'did_you_mean'
 end
 
 group :production do
