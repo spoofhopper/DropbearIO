@@ -12,6 +12,7 @@
 
 class Contact < ActiveRecord::Base
   belongs_to :group
+  has_one :user, through: :group
   validates :name, presence: true,
                     length: { minimum: 5, maximum: 50 }
   validates :phone_number, presence: true,

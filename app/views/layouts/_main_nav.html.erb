@@ -18,14 +18,28 @@
                 <li>
                     <a href="/">Home</a>
                 </li>
+                <%  if current_user %>
                 <li>
                     <a href="/groups">Groups</a>
                 </li>
+                <% end %>
                 <li>
                     <a href="/about">About</a>
                 </li>
                 <li>
                     <a href="/contact_us">Contact Us</a>
+                </li>
+                <li>
+                  <%  if current_user %>
+                  <a href="/"><i>Signed in as <%=current_user.name %></i></a>
+                  <% else %>
+                  <a href="/auth/twitter">Sign in with Twitter</a>
+                  <% end %>
+                </li>
+                <li>
+                  <% if current_user %>
+                  <%= link_to "Sign out", signout_path %>
+                  <% end %>
                 </li>
             </ul>
         </div>

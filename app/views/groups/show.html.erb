@@ -16,9 +16,9 @@
           <td><%= @group.description %></td>
           <td><%= image_tag(@group.image_url, class: 'img-thumbnail img-responsive') %></td>
           <td>
-            <%=link_to 'New Message', new_group_message_path(@group), class: 'btn btn-success btn-xs' %>
-            <%=link_to "Group Messages", group_messages_path(@group), class: 'btn btn-warning btn-xs' %>
-            <%=link_to 'Edit Group', edit_group_path(@group), class: 'btn btn-warning btn-xs' %>
+            <%=link_to 'New Message', new_user_group_message_path(@user, @group), class: 'btn btn-success btn-xs' %>
+            <%=link_to "Group Messages", user_group_messages_path(@user, @group), class: 'btn btn-warning btn-xs' %>
+            <%=link_to 'Edit Group', edit_user_group_path(@user, @group), class: 'btn btn-warning btn-xs' %>
             <%=link_to 'Delete Group', @group, method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-xs btn-danger' %>
           </td>
         </tr>

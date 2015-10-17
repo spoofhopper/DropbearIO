@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
 
-
-#  resources :users do
+  resources :sessions
+  resources :users do
     resources :groups do
       resources :messages
       resources :contacts
     end
-#  end
+  end
 
 post 'twilio/voice' => 'twilio#voice'
 get 'twilio/sms_reply' => 'twilio#sms_reply'
@@ -20,7 +20,9 @@ match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
   get 'contact_us', to: 'static_pages#contact_us'
   get 'groups', to: 'groups#index'
 
-
+get '/auth/:provider/callback', to: 'sessions#create'
+get 'signout', to: 'sessions#destroy', as: 'signout'
+get '/auth/failure', to: redirect('/')
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -7,56 +7,81 @@ class ContactsController < ApplicationController
 
 
     def index
-      set_group
-      @contacts = Group.find(@group).contacts
+      if current_user
+        set_user
+        set_group
+        @contacts = Group.find(@group).contacts
+      else new_user
+        redirect_to root_path
+      end
     end
 
     def show
-      set_group
-      #set_contact
-      @contact = get_contact
+      if current_user
+        set_user
+        set_group
+        #set_contact
+        @contact = get_contact
+      else new_user
+        redirect_to root_path
+      end
     end
 
     def new
-      set_group
-      @contact = Contact.new
+      if current_user
+        set_user
+        set_group
+        @contact = Contact.new
+      else new_user
+        redirect_to root_path
+      end
     end
 
     def create
-      set_group
-      @contact = Contact.new(contact_params)
-      @contact.group = @group
-      if @contact.save
-        redirect_to group_contacts_path(@group, @contact)
-      else
-        render 'new'
+      if current_user
+        set_user
+        set_group
+        @contact = Contact.new(contact_params)
+        binding.pry
+        @contact.user = @user
+        @contact.group = @group
+        if @contact.save
+          redirect_to user_group_contacts_path(@group, @contact)
+        else
+          render 'new'
+        end
+      else new_user
+        redirect_to root_path
       end
     end
 
 
     def edit
+      set_user
       set_group
       #set_contact
       @contact = get_contact
     end
 
     def update
+      set_user
       set_group
       #set_contact
       @contact = get_contact
       if @contact.update(contact_params)
-        redirect_to group_contacts_path(@group, @contact)
+        redirect_to user_group_contacts_path(@group, @contact)
       else
         render 'edit'
       end
     end
 
     def destroy
+      set_user
       set_group
       #set_contact
       @contact = get_contact
       @contact.destroy
-      redirect_to group_contacts_path(@group)
+      redirect_to user_group_contacts_path(@group)
     end
 
 
@@ -80,5 +105,8 @@ class ContactsController < ApplicationController
         @group = Group.find(params[:group_id])
       end
 
+      def set_user
+        @user = User.find(session[:user_id])
+      end
 
 end

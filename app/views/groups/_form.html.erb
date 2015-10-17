@@ -2,7 +2,7 @@
 </div>
 
 <div class="panel-body">
-  <%= simple_form_for @group do |f| %>
+  <%= simple_form_for [@user, @group] do |f| %>
 
     <% if @group.errors.any? %>
       <div id="error_explanation">

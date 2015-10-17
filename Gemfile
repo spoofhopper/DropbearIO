@@ -11,7 +11,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form'
-gem 'font-awesome-sass', '~> 4.4.0'
+# gem 'font-awesome-sass', '~> 4.4.0'
 
 
 #Other
@@ -24,7 +24,11 @@ gem 'tilt', '~> 1.4.1'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'delayed_job_web'
-gem 'figaro'
+# gem 'figaro'
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-google-oauth2'
+gem 'json'
+gem 'omniauth-twitter', '~> 1.1.0'
 
 group :development, :test do
   gem 'byebug'

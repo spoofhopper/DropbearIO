@@ -20,6 +20,10 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  provider               :string
+#  uid                    :string
+#  twitter_token          :string
+#  twitter_secret         :string
 #
 
 require 'test_helper'

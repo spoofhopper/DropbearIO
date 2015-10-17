@@ -11,6 +11,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    color: #cccccc;
 }
 
 h1,
@@ -67,7 +68,10 @@ th, td {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 3px;
+    background: #737d91;
 }
+
+
 
 .img-full {
     min-width: 100%;
@@ -199,6 +203,7 @@ footer p {
 
     .navbar-nav>li>a {
         line-height: normal;
+        color: red;
     }
 
     .navbar-nav {

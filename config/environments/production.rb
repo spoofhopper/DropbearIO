@@ -3,6 +3,7 @@ Rails.application.configure do
 
   config.middleware.use Rack::TwilioWebhookAuthentication, Rails.application.secrets.twilio_auth_token, '/voice'
 
+  config.assets.precompile += ['active_admin.css']
 
   # Code is not reloaded between requests.
   config.cache_classes = true

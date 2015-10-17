@@ -6,7 +6,7 @@
       <div class="address-bar">
         <p>
         <p>
-          <%= link_to "Create New Message", new_group_message_path(@group, @message), class: 'btn btn-success' %>
+          <%= link_to "Create New Message", new_user_group_message_path(@user, @group, @message), class: 'btn btn-success' %>
 
       </div>
 
@@ -30,9 +30,9 @@
       <td><%= message.date %></td>
       <td>
 
-        <%  link_to 'TEST MESSAGE', group_message_path(@group,message), class: 'btn btn-danger btn-xs' %>
-        <%= link_to 'Edit Message', edit_group_message_path(@group, message), class: 'btn btn-warning btn-xs' %>
-        <%= link_to 'Delete Message', group_message_path(@group, message), method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-xs btn-danger' %>
+        <%  link_to 'TEST MESSAGE', user_group_message_path(@user, @group, message), class: 'btn btn-danger btn-xs' %>
+        <%= link_to 'Edit Message', edit_user_group_message_path(@user, @group, message), class: 'btn btn-warning btn-xs' %>
+        <%= link_to 'Delete Message', user_group_message_path(@user, @group, message), method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-xs btn-danger' %>
       </td>
     </tr>
 

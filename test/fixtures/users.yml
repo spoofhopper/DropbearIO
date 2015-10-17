@@ -20,22 +20,38 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  provider               :string
+#  uid                    :string
+#  twitter_token          :string
+#  twitter_secret         :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  provider: MyString
+  uid: MyString
   name: MyString
+  phone_number: MyString
+  twitter_token: MyString
+  twitter_secret: MyString
+  twilio_sid: MyString
+  twilio_token: MyString
+  profile_image: MyString
   email: MyString
-  phone: MyString
   address: MyString
   website: MyString
-  image_url: MyString
 
 two:
+  provider: MyString
+  uid: MyString
   name: MyString
+  phone_number: MyString
+  twitter_token: MyString
+  twitter_secret: MyString
+  twilio_sid: MyString
+  twilio_token: MyString
+  profile_image: MyString
   email: MyString
-  phone: MyString
   address: MyString
   website: MyString
-  image_url: MyString

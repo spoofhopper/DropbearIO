@@ -15,7 +15,7 @@
 class Group < ActiveRecord::Base
   belongs_to :user
   has_many :messages, dependent: :destroy
-  has_many :contacts
+  has_many :contacts, dependent: :destroy
   validates :name, presence: true,
                     length: { minimum: 5, maximum: 50 }
 
