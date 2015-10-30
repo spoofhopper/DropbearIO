@@ -68,7 +68,7 @@ th, td {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 3px;
-    background: #737d91;
+    background: rgb(115,125,145);
 }
 
 
@@ -203,7 +203,7 @@ footer p {
 
     .navbar-nav>li>a {
         line-height: normal;
-        color: red;
+        color: white !important;
     }
 
     .navbar-nav {

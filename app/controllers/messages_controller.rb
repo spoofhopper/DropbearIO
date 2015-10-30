@@ -72,7 +72,7 @@ class MessagesController < ApplicationController
     set_group
     @message = get_message
     @message.destroy
-    redirect_to user_group_messages_path(@group)
+    redirect_to user_group_messages_path(@user, @group)
   end
 
 
