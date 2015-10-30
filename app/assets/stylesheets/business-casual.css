@@ -68,7 +68,7 @@ th, td {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 3px;
-    background: rgb(115,125,145);
+    background: rgba(115,125,145,1.0);
 }
 
 
@@ -91,6 +91,7 @@ th, td {
 .brand-before,
 .brand-name {
     text-transform: capitalize;
+    color: black;
 }
 
 .brand-before {
@@ -111,8 +112,7 @@ th, td {
 .box {
     margin-bottom: 20px;
     padding: 30px 15px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,1);
 }
 
 .intro-text {
@@ -120,6 +120,7 @@ th, td {
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 1px;
+    color: black;
 }
 
 .img-border {
@@ -193,17 +194,20 @@ footer p {
 
     .navbar-default {
         border: none;
-        background: #fff;
-        background: rgba(255,255,255,0.9);
+        background: rgba(255,255,255,0.0);
     }
 
-    .nav>li>a {
-        padding: 35px;
+    .nav > li > a {
+        padding top: 10px;
+        padding right: 15px;
+        padding bottom: 10px;
+        padding left: 15px;
+        /*padding: 35px;*/
     }
 
-    .navbar-nav>li>a {
+    .navbar-default .navbar-nav > li > a {
         line-height: normal;
-        color: white !important;
+        color: #cccccc;
     }
 
     .navbar-nav {
